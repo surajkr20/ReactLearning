@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="product-of-list"></div>
+
+    <script>
+
+        let data = document.querySelector(".product-of-list");
+
+        function renderProduct(){
+            data.innerHTML = data.map((value)=>{
+                console.log(value.)
+            })
+        }
+
+        async function getProductData(){
+            try{
+                const apiResponce = await ('https://dummyjson.com/products',{
+                    method : 'GET'
+                })
+
+                const result = await apiResponce.json();
+                console.log(result)
+
+                if(result?.product?.length > 0) renderProduct(result?.product);
+
+            }catch(e){
+                console.log(e);
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
